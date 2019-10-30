@@ -37,6 +37,16 @@ $opacity-bg: 0.8;
     }
 }
 
+// Media color
+
+@function set-text-color ($color){
+    @if (lightness($color) > 40){
+        @return #000;
+    } @else {
+        @return white;
+    }
+}
+
 // Media querys
 
 @mixin mediaSm {

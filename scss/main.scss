@@ -2,7 +2,6 @@
 
 @import 'menu';
 
-@import 'mobile';
 
 *{
     box-sizing: border-box;
@@ -11,7 +10,7 @@
 body {
     @include bg;
     background: $primary-color; 
-    color: #fff;
+    color: set-text-color($primary-color);
     height: 100%;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -21,23 +20,23 @@ body {
 h1, h2, h3 {
     margin: 0;
     font-weight: 400;
-
+    
     &.lg-heading {
         font-size: 6rem;
     }
-
+    
     &.sm-heading {
         margin-bottom: 2rem;
         padding: 0.2rem 1rem;
         background: rgba(lighten($primary-color, 2), 0.5);
     }
-
+    
 }
 
 a {
     text-decoration: none;
     color: #fff;
-
+    
 }
 
 header {
@@ -48,7 +47,7 @@ header {
 
 .secondary-color {
     color: $secondary-color;
-
+    
 }
 
 main {
@@ -56,10 +55,10 @@ main {
     height: 100%;
     .icons {
         margin-top: 1rem;
-
+        
         a {
             padding: 0.4rem;
-
+            
             &:hover{
                 color: $secondary-color;
                 
@@ -68,7 +67,7 @@ main {
             }
         }
     }
-
+    
     &#home {
         overflow: hidden;
         h1 {
@@ -76,3 +75,30 @@ main {
         }
     }
 }
+
+
+.about-info{
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: 'bioimage bio bio';
+    grid-template-columns: 1fr 1fr 1fr; // repeat (3, 1fr);
+    align-items: center;    
+}
+
+
+.bio-image{
+    grid-area: bioimage;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+    
+}
+
+.bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+}
+
+@import 'mobile';
